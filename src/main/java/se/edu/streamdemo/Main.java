@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println("Printing all data ...");
         printAllData(tasksData);
+        printAllDataUsingStreams(tasksData);
 
         System.out.println("Printing deadlines ...");
         printDeadlines(tasksData);
@@ -36,6 +37,12 @@ public class Main {
         for (Task t : tasksData) {
             System.out.println(t);
         }
+    }
+
+    public static void printAllDataUsingStreams(ArrayList<Task> tasks) {
+        System.out.println("Printing data using streams ...");
+        tasks.stream()
+                .forEach(System.out::println);
     }
 
     public static void printDeadlines(ArrayList<Task> tasksData) {
